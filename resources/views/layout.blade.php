@@ -26,7 +26,7 @@
                         <summary>Auth</summary>
                         <ul class="bg-base-100 rounded-t-none p-2">
                             <li><a href="{{route("auth.register")}}">Inscription</a></li>
-                            <li><a>Connexion</a></li>
+                            <li><a href="{{route("auth.login")}}">Connexion</a></li>
                         </ul>
                     </details>
                 </li>
