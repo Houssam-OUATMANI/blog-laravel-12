@@ -47,4 +47,9 @@ class AuthController extends Controller
 
 
     }
+
+    public function handleLogout() {
+        Auth::logout();
+        return redirect()->route("auth.login")->with("success", "Vous etes deconnecter");
+    }
 }

@@ -27,6 +27,12 @@
                         <ul class="bg-base-100 rounded-t-none p-2">
                             <li><a href="{{route("auth.register")}}">Inscription</a></li>
                             <li><a href="{{route("auth.login")}}">Connexion</a></li>
+
+                            <form action="{{route("auth.handleLogout")}}" method="POST">
+                                @csrf()
+                                @method("DELETE")
+                                <button>Deconnexion</button>
+                            </form>
                         </ul>
                     </details>
                 </li>
