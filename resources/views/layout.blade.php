@@ -12,12 +12,12 @@
 
 <body>
 
-    @if (Session::has("success"))
+    @if (Session::has('success'))
         {{ Session::get('success') }}
     @endif
     <div class="navbar bg-base-100 shadow-sm">
         <div class="flex-1">
-            <a href="{{route("home")}}" class="btn btn-ghost text-xl">Mon blog</a>
+            <a href="{{ route('home') }}" class="btn btn-ghost text-xl">Mon blog</a>
         </div>
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
@@ -25,14 +25,23 @@
                     <details>
                         <summary>Auth</summary>
                         <ul class="bg-base-100 rounded-t-none p-2">
-                            <li><a href="{{route("auth.register")}}">Inscription</a></li>
-                            <li><a href="{{route("auth.login")}}">Connexion</a></li>
 
-                            <form action="{{route("auth.handleLogout")}}" method="POST">
-                                @csrf()
-                                @method("DELETE")
-                                <button>Deconnexion</button>
-                            </form>
+                            @guest
+                                <li><a href="{{ route('auth.register') }}">Inscription</a></li>
+                                <li><a href="{{ route('auth.login') }}">Connexion</a></li>
+                            @endguest
+
+
+
+                            @auth
+                                <form action="{{ route('auth.handleLogout') }}" method="POST">
+                                    @csrf()
+                                    @method('DELETE')
+                                    <button>Deconnexion</button>
+                                </form>
+                            @endauth
+
+
                         </ul>
                     </details>
                 </li>
