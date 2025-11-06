@@ -7,6 +7,8 @@
 @section('body')
 
     <section class="min-h-96 flex py-4 px-4 gap-3">
+
+        <a class="btn btn-primary" href="{{route("post.create")}}">Ajouter une publication</a>
         @foreach ($posts as $post)
             <div class="card w-96 bg-amber-300 card-xs shadow-sm">
                 <div class="card-body">

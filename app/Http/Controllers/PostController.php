@@ -18,7 +18,9 @@ class PostController extends Controller
         return view("post.show", compact("post"));
     }
 
-    public function create() {}
+    public function create() {
+        return view("post.create");
+    }
 
     public function store() {}
 
