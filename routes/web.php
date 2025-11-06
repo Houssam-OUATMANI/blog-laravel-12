@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +26,12 @@ Route::post("/auth/login", [AuthController::class, "handleLogin"])
 Route::delete("/auth/logout", [AuthController::class, "handleLogout"])
     ->name("auth.handleLogout")
     ->middleware("auth");
+
+
+
+Route::get("/posts", [PostController::class, "index"])->name("post.index");
+Route::get("/posts/{post}", [PostController::class, "show"])->name("post.show");
+
 
 
 
