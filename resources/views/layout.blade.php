@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cyberpunk">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <title>@yield('title')</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+<title>@yield('title')</title>
 
 
     <style>
@@ -17,7 +18,7 @@
     </style>
 </head>
 
-<body>
+<body class="p-8" >
 
     @if (Session::has('success'))
         {{ Session::get('success') }}

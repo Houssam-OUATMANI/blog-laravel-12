@@ -7,7 +7,7 @@
 @section('body')
 
 
-<form action="" method="post">
+<form action="{{route("post.store")}}" method="post">
     @csrf
     @include("components.input", ["label" => "titre de la publication", "name" => "title"])
     @include("components.input", ["label" => "contenu", "name" => "content", "type" => "textarea"])

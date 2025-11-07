@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a59389decc3f6069f384f7a80bf3f0f9",
+    "content-hash": "11471f320fd1b4093c56a2cc672eeac6",
     "packages": [
         {
             "name": "brick/math",
@@ -508,6 +508,63 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "fastvolt/markdown",
+            "version": "v0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fastvolt/markdown.git",
+                "reference": "ded3261799d713efa6a685cd0d44344c021fd02c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fastvolt/markdown/zipball/ded3261799d713efa6a685cd0d44344c021fd02c",
+                "reference": "ded3261799d713efa6a685cd0d44344c021fd02c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-tokenizer": "*",
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.38",
+                "phpunit/phpunit": "^10.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FastVolt\\Helper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oladoyinbo Vincent",
+                    "email": "oladoyinboadverts@gmail.com"
+                }
+            ],
+            "description": "A Fast, Simple and Straight-forward Markdown to HTML Converter for PHP.",
+            "keywords": [
+                "markdown",
+                "markdown-library",
+                "markdown-parser",
+                "markdown-to-html"
+            ],
+            "support": {
+                "issues": "https://github.com/fastvolt/markdown/issues",
+                "source": "https://github.com/fastvolt/markdown/tree/v0.2.4"
+            },
+            "time": "2025-06-26T22:24:22+00:00"
         },
         {
             "name": "fruitcake/php-cors",
