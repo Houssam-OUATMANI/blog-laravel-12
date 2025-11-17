@@ -26,21 +26,34 @@ class PostController extends Controller
         return view("post.show", compact("post"));
     }
 
-    public function create() {
+    public function create()
+    {
         return view("post.create");
     }
 
-    public function store(StorePostFormRequest $request) {
+    public function store(StorePostFormRequest $request)
+    {
         $data = $request->validated();
         $data["user_id"] = Auth::id();
         Post::create($data);
         return redirect()->route("post.index")->with("success", "Publication ajoutee");
-
     }
 
-    public function edit() {}
+    public function edit(Post $post)
+    {
+        return view("post.edit", compact("post"));
+    }
 
-    public function update() {}
+    public function update(StorePostFormRequest $request, Post $post)
+    {
+        $data = $request->validated();
+        $post->update($data);
+        return redirect()->route("post.show", $post)->with("success", "Publication Modifiee");
+    }
 
-    public function destory() {}
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->route("post.index")->with("success", "Publication Supprimee");
+    }
 }

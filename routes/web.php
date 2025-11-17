@@ -35,6 +35,14 @@ Route::get("/posts/{post}", [PostController::class, "show"])->name("post.show");
 
 Route::post("/posts", [PostController::class, "store"])->name("post.store")->middleware("auth");
 
+Route::get("/posts/{post}/edit", [PostController::class, "edit"])->name("post.edit")->middleware("auth");
+
+Route::put("/posts/{post}/edit", [PostController::class, "update"])->name("post.update")->middleware("auth");
+
+Route::delete("/posts/{post}/delete", [PostController::class, "destroy"])->name("post.destroy")->middleware("auth");
+
+
+
 
 
 

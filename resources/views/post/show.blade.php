@@ -5,11 +5,13 @@
 
 
 @section('body')
-      <h2 class="card-title">{{ $post->title }}</h2>
+    <h2 class="card-title">{{ $post->title }}</h2>
     <section>
+        <div class="prose mx-auto">
             {!! $post->content !!}
-            <h3>Auteur : {{ $post->user->firstname }} {{ $post->user->lastname }}</h3>
-            </div>
+        </div>
+        <h3>Auteur : {{ $post->user->firstname }} {{ $post->user->lastname }}</h3>
+        </div>
     </section>
 
 

@@ -2,22 +2,24 @@
      $label ??= '';
      $name ??= '';
      $type ??= 'text';
+     $value ??= null;
  @endphp
 
 
- <div>
+ <div class="flex flex-col py-2">
      <label for="{{ $name }}">{{ $label }}</label>
      @if ($type === 'textarea')
-         <textarea name="{{ $name }}" id="{{ $name }}" cols="30" rows="10">{{ old($name) }}
+         <textarea class="textarea w-full" name="{{ $name }}" id="{{ $name }}" cols="30" rows="10">{{ $value ?? old($name) }}
             </textarea>
      @else
-         <input name="{{ $name }}" id="{{ $name }}" type="{{ $type }}" value="{{ old($name) }}"
-             class="input" />
+         <input name="{{ $name }}" id="{{ $name }}" type="{{ $type }}" value="{{ $value ?? old($name) }}"
+             class="input w-full h-20 rounded-2xl" />
      @endif
 
 
      @error($name)
-         <div class="alert alert-error">{{ $message }}</div>
+         <small class="text-red-500">{{ $message }}</small>
+         <br>
      @enderror
  </div>
 

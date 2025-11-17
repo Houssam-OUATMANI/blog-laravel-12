@@ -6,7 +6,7 @@
 
 @section("body")
 
-<h1>Page Connnnexion</h1>
+<h1 class="text-5xl py-8 text-center">Page Connnnexion</h1>
 
 
 
