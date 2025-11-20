@@ -7,9 +7,10 @@
 @section('body')
 
 
-<form action="{{route("post.store")}}" method="post">
+<form action="{{route("post.store")}}" method="post" enctype="multipart/form-data">
     @csrf
     @include("components.input", ["label" => "titre de la publication", "name" => "title"])
+    @include("components.input", ["label" => "Miniature", "name" => "thumbnail", "type" => "file"])
     @include("components.input", ["label" => "contenu", "name" => "content", "type" => "textarea"])
 
     <button class="btn" type="submit">Ajouter</button>

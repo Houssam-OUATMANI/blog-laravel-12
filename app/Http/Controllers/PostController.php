@@ -33,8 +33,10 @@ class PostController extends Controller
 
     public function store(StorePostFormRequest $request)
     {
+        $file_path = $request->file("thumbnail")->store("thumbnail");
         $data = $request->validated();
         $data["user_id"] = Auth::id();
+        $data["thumbnail"] = "storage/" . $file_path;
         Post::create($data);
         return redirect()->route("post.index")->with("success", "Publication ajoutee");
     }
